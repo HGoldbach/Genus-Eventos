@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+.hero {
+    background-image: url("../../../assets/background-wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 500px;
+    height: 50px;
+    padding: 2rem;
+    border-radius: 5rem;
+    background-color: rgba(255, 255, 255, 0.235);
+    border: none;
+    font-size: 1.5rem;
+    color: hsl(161deg, 97%, 47%);
+}
+
+input:focus {
+    border: 1px solid hsla(161, 97%, 47%, 0.841);
+}
+
+::-webkit-input-placeholder {
+    /* Edge */
+    color: white;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+
+.btn-form {
+    width: 100%;
+    height: 50px;
+    line-height: 0rem;
+    padding: 2rem;
+    border-radius: 5rem;
+    border: none;
+    font-size: 1.5rem;
+    background-color: hsla(161, 97%, 47%, 0.841);
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.btn-form:hover {
+    background-color: hsl(161, 99%, 28%, 0.841);
+
+}
+
+p {
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+p a {
+    color: hsla(161, 97%, 47%, 0.841);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: .1s ease-in-out;
+
+}
+
+p a:hover {
+    color: hsl(161, 100%, 65%);
+
+}
+
+.dados {
+    display: flex;
+    gap: 3rem;
+}
+
+
