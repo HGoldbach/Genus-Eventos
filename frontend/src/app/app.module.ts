@@ -5,19 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { ContaModule } from './conta/conta.module';
-import { EventoModule } from './evento/evento.module';
+import { ClienteModule } from './cliente/cliente.module';
+import { AdministradorModule } from './administrador/administrador.module';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ContaModule,
-    EventoModule
+    ClienteModule,
+    AdministradorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

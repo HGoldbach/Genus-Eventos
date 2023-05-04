@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+.hero {
+    background-image: url("../../../assets/background-wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 0;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+.nav {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.nav__items {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.nav__items--logo {
+    margin-right: auto;
+}
+
+a {
+    text-transform: uppercase;
+    color: hsl(161deg, 97%, 47%);
+    font-weight: 600;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+.main {
+    position: absolute;
+    margin-top: 4%;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__text--title {
+    font-size: 7rem;
+    line-height: 0;
+}
+
+.btns-acoes {
+    margin-top: 5rem;
+    display: flex;
+    
+}
+
+.acao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.btn-acao {
+    text-transform: uppercase;
+    width: 20rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    background-color: rgba(255, 255, 255, 0.085);
+    border-radius: 0.3rem;
+    font-weight: 500;
+    transition: 0.2s ease-in-out;
+    font-size: 1.5rem;
+    margin-inline: 5rem;
+    border: 1px solid hsl(161deg, 97%, 47%);
+
+}
+
+.btn-acao:hover {
+    background-color: rgba(255, 255, 255, 0.29);
+    color: hsl(161deg, 97%, 47%);
+}
+
+i {
+    color: hsl(0, 0%, 100%);
+    font-size: 3.5rem;
+}
