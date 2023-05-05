@@ -12,7 +12,6 @@ import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    HeaderComponent
   ],
   imports: [
     CommonModule,
