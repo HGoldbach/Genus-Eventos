@@ -6,19 +6,20 @@ import { EventoModule } from './evento/evento.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { FuncionarioModule } from './funcionario/funcionario.module';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     AdministradorRoutingModule,
     EventoModule,
     ClienteModule,
-    FuncionarioModule
+    FuncionarioModule,
+    SharedModule
   ]
 })
 export class AdministradorModule { }

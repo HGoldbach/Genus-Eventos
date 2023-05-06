@@ -4,6 +4,7 @@ import { HomeComponent } from './home';
 import { ContaModule } from './conta/conta.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { ClienteModule } from './administrador';
+import { EventoModule } from './administrador/evento';
 
 
 
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'administrador/clientes',
     loadChildren: () => ClienteModule
+  },
+  {
+    path: 'administrador/eventos',
+    loadChildren: () => EventoModule
   }
 ];
 

@@ -7,6 +7,7 @@ import { HomeComponent } from './home';
 import { ContaModule } from './conta/conta.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { AdministradorModule } from './administrador/administrador.module';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -21,7 +22,8 @@ import { AdministradorModule } from './administrador/administrador.module';
     AppRoutingModule,
     ContaModule,
     ClienteModule,
-    AdministradorModule
+    AdministradorModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

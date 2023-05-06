@@ -3,18 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { ClienteRoutingModule } from './cliente-routing.module';
 import { ListarComponent } from './listar/listar.component';
-import { HeaderComponent } from '../header/header.component';
+import { AdministradorModule } from '../administrador.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+
 
 
 
 @NgModule({
   declarations: [
-    ListarComponent,
-    HeaderComponent
+    ListarComponent
   ],
   imports: [
     CommonModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    SharedModule
   ]
 })
 export class ClienteModule { }
