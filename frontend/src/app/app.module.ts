@@ -8,6 +8,7 @@ import { ContaModule } from './conta/conta.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -23,7 +24,8 @@ import { SharedModule } from './shared/shared.module';
     ContaModule,
     ClienteModule,
     AdministradorModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

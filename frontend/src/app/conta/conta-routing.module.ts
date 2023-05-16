@@ -6,14 +6,17 @@ import { RegistrarComponent } from './registrar';
 const routes: Routes = [
   {
     path: '',
+    title: 'Genus - Login',
     component: LoginComponent,
   },
   {
     path: 'conta/login',
+    title: 'Genus - Login',
     component: LoginComponent
   },
   {
     path: 'conta/registrar',
+    title: 'Genus - Registrar',
     component: RegistrarComponent
   }
 ];

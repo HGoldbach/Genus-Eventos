@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    margin: 3rem 0;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    margin: .5rem 0;
+}
+
+input {
+    font-family: "Poppins", sans-serif;
+    width: 500px;
+    height: 50px;
+    padding: 2rem;
+    background-color: #26474622;
+    border: none;
+    font-size: 1.5rem;
+    color: grey;
+}
+
+::-webkit-input-placeholder {
+    /* Edge */
+    color: #26474662;
+    font-family: "Poppins", sans-serif;
+;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #26474662;
+    font-family: "Poppins", sans-serif;
+;
+}
+
+::placeholder {
+    color: #26474662;
+    font-family: "Poppins", sans-serif;
+;
+}
+
+.btn-form {
+    height: 50px;
+    line-height: 0rem;
+    padding: 2rem;
+    border-radius: 5rem;
+    border: none;
+    font-size: 1.5rem;
+    background-color: hsla(161, 97%, 47%, 0.841);
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.btn-form:hover {
+    background-color: hsl(161, 99%, 28%, 0.841);
+
+}
+
+p {
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+p a {
+    color: hsla(161, 97%, 47%, 0.841);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: .1s ease-in-out;
+
+}
+
+p a:hover {
+    color: hsl(161, 100%, 65%);
+
+}
+
+.dados {
+    display: flex;
+    gap: 3rem;
+}
+
+

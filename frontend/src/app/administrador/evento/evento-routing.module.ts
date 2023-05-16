@@ -5,6 +5,7 @@ import { ListarComponent } from './listar';
 const routes: Routes = [
   {
     path: '',
+    title: 'Genus - Administração Eventos',
     component: ListarComponent
   }
 ];

@@ -11,6 +11,7 @@ import { EventoModule } from './administrador/evento';
 const routes: Routes = [
   {
     path: '',
+    title: 'Genus Eventos',
     component: HomeComponent,
     pathMatch: 'full'
   },

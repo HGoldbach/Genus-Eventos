@@ -5,6 +5,7 @@ import { HomeComponent } from './home';
 const routes: Routes = [
   {
     path: '',
+    title: 'Genus - Administração',
     component: HomeComponent
   },
 ];

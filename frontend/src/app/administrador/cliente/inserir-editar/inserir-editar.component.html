@@ -1,0 +1,66 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Novo Cliente</h1>
+    <button class="btn-form" (click)="buscarEndereco(cep.value)">Criar Conta</button>
+    <form class="form" #formCliente="ngForm">
+        <div class="dados">
+            <div class="dados-pessoais">
+                <h2>Dados Pessoais</h2>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Nome Completo">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="CPF">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="email" placeholder="Email">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="tel" placeholder="Telefone">
+                    </p>
+                </div>
+            </div>
+            <div class="dados-endereco">
+                <h2>Endereço</h2>
+                <div class="field">
+                    <p class="control ctl-cep">
+                        <input class="input input-cep" #cep type="text" placeholder="CEP">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Rua">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="email" placeholder="Numero">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="tel" placeholder="Complemento">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Bairro">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Cidade">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button class="btn-form" type="submit">Criar Conta</button>
+    </form>
+</div>
