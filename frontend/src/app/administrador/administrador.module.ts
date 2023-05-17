@@ -7,6 +7,9 @@ import { ClienteModule } from './cliente/cliente.module';
 import { FuncionarioModule } from './funcionario/funcionario.module';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 
 @NgModule({
@@ -19,7 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     EventoModule,
     ClienteModule,
     FuncionarioModule,
-    SharedModule
+    SharedModule,
+    NgxMaskModule.forRoot()
   ]
 })
 export class AdministradorModule { }

@@ -56,11 +56,15 @@ input {
 ;
 }
 
-.btn-form {
+.form-acoes {
+    text-align: center;
+}
+
+.btn-submit {
     height: 50px;
     line-height: 0rem;
     padding: 2rem;
-    border-radius: 5rem;
+    border-radius: .3rem;
     border: none;
     font-size: 1.5rem;
     background-color: hsla(161, 97%, 47%, 0.841);
@@ -70,11 +74,24 @@ input {
     margin-top: 2rem;
     cursor: pointer;
     transition: .1s ease-in-out;
+    margin-right: 1rem;
 }
 
-.btn-form:hover {
+.btn-submit:hover {
     background-color: hsl(161, 99%, 28%, 0.841);
 
+}
+
+.btn-voltar {
+    background-color: black;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    line-height: 0rem;
+    border-radius: .3rem;
+    border: none;
+    font-size: 1.5rem;
+    padding: .92rem 2.5rem;
+    margin-left: 1rem;
 }
 
 p {

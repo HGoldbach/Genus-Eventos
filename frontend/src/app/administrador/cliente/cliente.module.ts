@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { ClienteService } from './services';
 import { RouterModule } from '@angular/router';
+import { NgxMaskModule } from 'ngx-mask'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forChild()
   ],
   providers: [
     ClienteService
