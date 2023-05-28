@@ -1,0 +1,168 @@
+:host ::ng-deep .nav {
+    background-color: #004F98;
+}
+
+:host ::ng-deep .nav a:hover {
+    color: #15F4EE;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #004F98;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    margin: 4rem 0;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #004F98;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+}
+
+form {
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    font-family: "Poppins", sans-serif;
+}
+
+select {
+    font-family: "Poppins", sans-serif;
+    width: 200px;
+    height: 40px;
+}
+
+.field-evento {
+    grid-column: 2/4;
+    
+}
+
+.field-cliente {
+    text-align: center;
+}
+
+.field-cliente .control input {
+    font-family: "Poppins", sans-serif;
+    width: 300px;
+    height: 40px;
+    padding: 1rem;
+    background-color: #26474622;
+    border: none;
+    font-size: 1rem;
+    color: grey;
+}
+
+.dados-evento {
+    width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: .5rem;
+    margin-inline: auto;
+    text-align: center;
+    
+}
+
+.dados-evento label {
+    font-weight: bold;
+    display: block;
+}
+
+
+.data-evento input {
+    width: 200px;
+}
+
+.horario-evento {
+    grid-column: 1/3;
+    display: flex;
+    justify-content: space-around;
+}
+
+.horario-evento input {
+    font-family: "Poppins", sans-serif;
+    width: 200px;
+    height: 40px;
+    padding: 1rem;
+    font-size: 1rem;
+    color: grey;
+}
+
+
+.field-profissionais {
+    text-align: end;
+}
+
+.profissional div { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profissional select {
+    width: 300px;
+    margin-bottom: 1rem;
+}
+
+.profissional label {
+    align-self: flex-start;
+    margin-left: 4.7rem;
+}
+
+.novo-profissional {
+    margin-right: 4.6rem;
+}
+
+.field-servicos, .field-materiais {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.field-servicos {
+    margin-left: 6rem;
+}
+
+.field-materiais {
+    margin-right: 6rem;
+}
+
+.field-servicos button, .field-materiais button {
+    font-family: "Poppins", sans-serif;
+    width: 200px;
+    height: 40px;
+}
+
+.valor-total {
+    grid-column: 3/4;
+    margin-top: -5rem;
+    font-size: 2rem;
+}
+
+.acoes {
+    grid-column: 1/4;
+    text-align: center;
+}
+
+.btn {
+    font-family: "Poppins", sans-serif;
+    width: 150px;
+    height: 40px;
+    margin-inline: .5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: .4rem;
+}
+
+.btn-cadastrar {
+    background-color: #004F98;
+    color: white;
+}
+
+.btn-cadastrar:hover {
+    background-color: #006ed4;
+}

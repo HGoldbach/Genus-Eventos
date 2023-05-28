@@ -5,6 +5,7 @@ import { ContaModule } from './conta/conta.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { ClienteModule } from './administrador';
 import { EventoModule } from './administrador/evento';
+import { ProfissionalModule } from './administrador/profissional/profissional.module';
 
 
 
@@ -30,7 +31,12 @@ const routes: Routes = [
   {
     path: 'administrador/eventos',
     loadChildren: () => EventoModule
+  },
+  {
+    path: 'administrador/profissionais',
+    loadChildren: () => ProfissionalModule
   }
+  
 ];
 
 @NgModule({

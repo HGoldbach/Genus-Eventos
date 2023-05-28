@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Novo Evento</h1>
+    <form action="">
+        <div class="field field-cliente">
+            <h3>Cliente</h3>
+            <p class="control">
+                <input type="text" name="cpf" id="cpf" class="input cliente-cpf" placeholder="CPF">
+            </p>
+            <p class="control">
+                <input type="text" name="nome" id="nome" class="input cliente-nome" placeholder="Nome">
+            </p>
+        </div>
+        <div class="field field-evento">
+            <h3>Dados do evento</h3>
+            <div class="dados-evento">
+                <div class="control tipo-evento">
+                    <label for="tipo">Tipo de evento</label>
+                    <select name="tipo" id="tipo">
+                        <option value="casamento">Casamento</option>
+                        <option value="aniversario">Aniversário</option>
+                        <option value="festa">Festa</option>
+                    </select>
+                </div>
+                <div class="control data-evento">
+                    <label for="data">Data</label>
+                    <input type="date" name="data" id="data" class="input input-data">
+                </div>
+                <div class="control horario-evento">
+                    <div class="horario-inicio">
+                        <label for="inicio">Horário Início</label>
+                        <input type="text" name="inicio" id="inicio" class="input-inicio">
+                    </div>
+                    <div class="horario-fim">
+                        <label for="fim">Horário Fim</label>
+                        <input type="text" name="fim" id="fim" class="input-fim">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field field-profissionais">
+            <h3>Profissionais</h3>
+            <div class="profissional">
+                <div class="control especialidade-profissional">
+                    <label for="especialidade">Especialidade</label>
+                    <select name="especialidade" id="especialidade">
+                        <option value="cozinheiro">Cozinheiro</option>
+                        <option value="bartender">Bartender</option>
+                        <option value="musico">Musico</option>
+                    </select>
+                </div>
+                <div class="control nome-profissional">
+                    <label for="nome-prof">Profissional</label>
+                    <select name="n-profissional" id="n-profissional">
+                        <option value="jonas">Jonas Maciel</option>
+                        <option value="claudia">Claudia Dinamo</option>
+                        <option value="beatriz">Beatriz Nascimento</option>
+                    </select>
+                </div>
+            </div>
+            <button class="novo-profissional"><i class="fa fa-plus"></i></button>
+        </div>
+        <div class="field field-servicos">
+            <h3>Serviços</h3>
+            <button>Inserir serviço</button>
+        </div>
+        <div class="field field-materiais">
+            <h3>Materiais</h3>
+            <button>Inserir Materiais</button>
+        </div>
+        <p class="valor-total">Valor total:<span>R$$$$</span></p>
+        <div class="acoes">
+            <button class="btn btn-cadastrar">Cadastrar</button>
+            <button class="btn btn-voltar">Voltar</button>
+        </div>
+    </form>
+</div>

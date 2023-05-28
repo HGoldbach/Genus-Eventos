@@ -1,0 +1,165 @@
+
+:host ::ng-deep .nav {
+    background-color: #4E2A84;
+}
+
+:host ::ng-deep .nav a:hover {
+    color: #9876ca;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4E2A84;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    margin: 4rem 0;
+}
+
+.novo-field {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.btn-novo {
+    background-color: #4E2A84;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+}
+
+.btn-novo:hover {
+    background-color: #4E2A84d8;
+}
+
+.searchbar {
+    height: 60px;
+    background-color: #4E2A84;
+    padding: 10px;
+}
+
+.search_input {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_input {
+    padding: 0 10px;
+    width: 300px;
+    caret-color: white;
+    transition: width 0.4s linear;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
+
+::-webkit-input-placeholder { /* Edge */
+    color: white;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  ::placeholder {
+    color: white;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.tbl-header {
+    background-color: #4E2A84;
+}
+
+.tbl-content {
+    height: 300px;
+    margin-top: -1px;
+    
+}
+
+th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white !important;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #4E2A84;
+    border-bottom: 2px solid #4E2A84;
+}
+
+tbody {
+    border-bottom: 2px solid #4E2A84;
+
+}
+
+.btn-acao {
+    border: none;
+    width: 47%;
+    height: 3rem;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: .1s ease;
+    margin-inline: .2rem;
+    font-family: inherit;
+}
+
+.btn-editar {
+    background-color: #4E2A84;
+
+}
+
+.btn-editar:hover {
+    background-color: #4E2A84d8;
+}
+
+.btn-excluir {
+    background-color: #EA3C53;
+}
+
+.btn-excluir:hover {
+    background-color: #ED2939;
+}

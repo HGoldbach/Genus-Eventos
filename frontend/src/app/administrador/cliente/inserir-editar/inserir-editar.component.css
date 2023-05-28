@@ -1,24 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
-
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
-    margin: 3rem 0;
+    margin: 4rem 0;
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
@@ -29,10 +26,10 @@ input {
     font-family: "Poppins", sans-serif;
     width: 500px;
     height: 50px;
-    padding: 2rem;
+    padding: 1rem;
     background-color: #26474622;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: grey;
 }
 
@@ -62,11 +59,12 @@ input {
 
 .btn-submit {
     height: 50px;
+    width: 150px;
     line-height: 0rem;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: .3rem;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background-color: hsla(161, 97%, 47%, 0.841);
     font-weight: 600;
     color: white;
@@ -89,8 +87,8 @@ input {
     line-height: 0rem;
     border-radius: .3rem;
     border: none;
-    font-size: 1.5rem;
-    padding: .92rem 2.5rem;
+    font-size: 1rem;
+    padding: .8rem 3rem;
     margin-left: 1rem;
 }
 
