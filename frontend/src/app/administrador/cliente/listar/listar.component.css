@@ -2,12 +2,12 @@
 
 
 h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
-    margin: 3rem 0;
+    margin: 4rem 0;
 }
 
 .novo-field {
@@ -101,7 +101,7 @@ table {
 
 .tbl-content {
     height: 300px;
-    margin-top: -1px;
+    
     
 }
 
@@ -109,7 +109,6 @@ th {
     padding: 20px 15px;
     text-align: left;
     font-weight: 500;
-    font-size: 1.2rem;
     color: white !important;
     text-transform: uppercase;
 }
@@ -119,7 +118,6 @@ td {
     text-align: left;
     vertical-align: middle;
     font-weight: 300;
-    font-size: 1.1rem;
     color: #25c481;
     border-bottom: 2px solid #264746;
 }

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdministradorRoutingModule } from './administrador-routing.module';
 import { EventoModule } from './evento/evento.module';
 import { ClienteModule } from './cliente/cliente.module';
-import { FuncionarioModule } from './funcionario/funcionario.module';
+import { ProfissionalModule } from './profissionais/profissional.module';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
@@ -21,7 +21,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     AdministradorRoutingModule,
     EventoModule,
     ClienteModule,
-    FuncionarioModule,
+    ProfissionalModule,
     SharedModule,
     NgxMaskModule.forRoot()
   ]
