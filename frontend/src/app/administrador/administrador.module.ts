@@ -8,6 +8,8 @@ import { ProfissionalModule } from './profissional/profissional.module';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -23,6 +25,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     ClienteModule,
     ProfissionalModule,
     SharedModule,
+    RouterModule,
+    FormsModule,
     NgxMaskModule.forRoot()
   ]
 })

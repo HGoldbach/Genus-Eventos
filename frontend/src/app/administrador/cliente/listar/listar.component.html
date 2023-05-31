@@ -23,36 +23,12 @@
         <div class="tbl-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
-                    <tr>
-                        <td>AAX</td>
-                        <td>ADELAIDE</td>
+                    <tr *ngFor="let cliente of clientes">
+                        <td>{{cliente.nome}}</td>
+                        <td>{{cliente.email}}</td>
                         <td style="text-align: center;">
-                            <button class="btn-acao btn-editar">Editar</button>
-                            <button class="btn-acao btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>AAX</td>
-                        <td>ADELAIDE</td>
-                        <td style="text-align: center;">
-                            <button class="btn-acao btn-editar">Editar</button>
-                            <button class="btn-acao btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>XXD</td>
-                        <td>ADITYA BIRLA</td>
-                        <td style="text-align: center;">
-                            <button class="btn-acao btn-editar">Editar</button>
-                            <button class="btn-acao btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>XXD</td>
-                        <td>ADITYA BIRLA</td>
-                        <td style="text-align: center;">
-                            <button class="btn-acao btn-editar">Editar</button>
-                            <button class="btn-acao btn-excluir">Excluir</button>
+                            <button class="btn-acao btn-editar"><a [routerLink]="['/administrador/clientes/editar', cliente.id]">Editar</a></button>
+                            <button class="btn-acao btn-excluir"><a (click)="removerCliente($event, cliente)">Excluir</a></button>
                         </td>
                     </tr>
                 </tbody>

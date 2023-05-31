@@ -23,7 +23,7 @@ import { NgxMaskModule } from 'ngx-mask'
     FormsModule,
     RouterModule,
     HttpClientModule,
-    NgxMaskModule.forChild()
+    NgxMaskModule.forChild() 
   ],
   providers: [
     ClienteService

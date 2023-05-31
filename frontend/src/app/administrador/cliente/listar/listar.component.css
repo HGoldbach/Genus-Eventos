@@ -133,11 +133,14 @@ tbody {
     width: 48%;
     height: 3rem;
     font-size: 1rem;
-    color: white;
-    cursor: pointer;
     transition: .1s ease;
     margin-inline: .2rem;
     font-family: inherit;
+}
+
+.btn-acao a {
+    color: white;
+    padding: .8rem 4.7rem;
 }
 
 .btn-editar {

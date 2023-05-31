@@ -155,7 +155,7 @@ select {
     margin-inline: .5rem;
     border: none;
     cursor: pointer;
-    border-radius: .4rem;
+    border-radius: .4rem; 
 }
 
 .btn-cadastrar {

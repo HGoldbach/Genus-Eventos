@@ -7,25 +7,30 @@
                 <h2>Dados Pessoais</h2>
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="Nome Completo">
+                        <input class="input" name="nome" id="nome" type="text" placeholder="Nome Completo"
+                            [(ngModel)]="cliente.nome" #nome="ngModel">
                     </p>
                 </div>
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" mask="000.000.000-00" placeholder="CPF">
+                        <input class="input" name="cpf" id="cpf" type="text" mask="000.000.000-00"
+                            [(ngModel)]="cliente.cpf" placeholder="CPF" #cpf="ngModel">
                     </p>
                 </div>
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="email" placeholder="Email">
+                        <input class="input" name="email" id="email" type="email" [(ngModel)]="cliente.email"
+                            placeholder="Email" #email="ngModel">
                     </p>
                 </div>
                 <div class="field">
                     <p class="control">
-                        <input class="input" mask="(00) 00000-0000"  type="tel" placeholder="Telefone">
+                        <input class="input" name="telefone" id="telefone" mask="(00) 00000-0000"
+                            [(ngModel)]="cliente.telefone" type="tel" placeholder="Telefone" #telefone="ngModel">
                     </p>
                 </div>
             </div>
+            <!-- 
             <div class="dados-endereco">
                 <h2>Endereço</h2>
                 <div class="field">
@@ -59,10 +64,11 @@
                     </p>
                 </div>
             </div>
+        -->
         </div>
         <div class="form-acoes">
-            <button class="btn-submit" type="submit">Salvar</button>
-            <a class="btn-voltar" href="#">Voltar</a>
+            <button class="btn btn-submit" (click)="salvar()" type="submit">Salvar</button>
+            <button class="btn btn-voltar">Voltar</button>
         </div>
     </form>
 </div>

@@ -1,3 +1,11 @@
+:host ::ng-deep .nav {
+    background-color: #4E2A84;
+}
+
+:host ::ng-deep .nav a:hover {
+    color: #9876ca;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -12,20 +20,21 @@ h1 {
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
     margin: 4rem 0;
+    color: #4E2A84;
 }
 
 h2 {
-    font-size: 1rem;
+    font-size: 1.7rem;
     font-weight: 700;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
-    margin: .5rem 0;
+    margin: .5rem 0 3rem;
 }
 
 input {
     font-family: "Poppins", sans-serif;
-    width: 500px;
-    height: 50px;
+    width: 400px;
+    height: 45px;
     padding: 1rem;
     background-color: #26474622;
     border: none;
@@ -33,25 +42,19 @@ input {
     color: grey;
 }
 
-::-webkit-input-placeholder {
-    /* Edge */
-    color: #26474662;
+
+
+select {
     font-family: "Poppins", sans-serif;
-;
+    width: 400px;
 }
 
-:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: #26474662;
+label {
     font-family: "Poppins", sans-serif;
-;
+
+    font-size: .9rem;
 }
 
-::placeholder {
-    color: #26474662;
-    font-family: "Poppins", sans-serif;
-;
-}
 
 .form-acoes {
     text-align: center;
@@ -69,12 +72,12 @@ input {
 }
 
 .btn-submit {
-    background-color: #264746;
+    background-color: #4E2A84;
     color: white;
 }
 
 .btn-submit:hover {
-    background-color: #286361;
+    background-color: #6932bb;
 }
 
 p {
@@ -98,7 +101,5 @@ p a:hover {
 
 .dados {
     display: flex;
-    gap: 3rem;
+    gap: 10rem;
 }
-
-

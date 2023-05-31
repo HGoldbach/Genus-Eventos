@@ -1,0 +1,89 @@
+<app-header></app-header>
+<div class="container">
+    <h1>Novo Profissional</h1>
+    <form class="form" #formProfissional="ngForm">
+        <div class="dados">
+            <div class="dados-pessoais">
+                <h2>Dados Pessoais</h2>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="nome">Nome Completo</label>
+                        <input class="input" type="text">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="cpf">CPF</label>
+                        <input class="input" type="text" mask="000.000.000-00">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="email">Email</label>
+                        <input class="input" type="email">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="telefone">Telefone</label>
+                        <input class="input" mask="(00) 00000-0000"  type="tel">
+                    </p>
+                </div>
+                <div class="control">
+                    <label class="label" for="especialidade">Especialidade</label>
+                    <div class="select">
+                        <select name="especialidade" id="especialidade">
+                            <option value="cozinheiro">Cozinheiro</option>
+                            <option value="bartender">Bartender</option>
+                            <option value="musico">Músico</option>
+                            <option value="garcom">Garçom</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="dados-endereco">
+                <h2>Endereço</h2>
+                <div class="field">
+                    <p class="control ctl-cep">
+                        <label class="label" for="cep">CEP</label>
+                        <input class="input input-cep" (keyup)="buscarEndereco(cep.value)" #cep mask="00000-000" type="text">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="rua">Rua</label>
+                        <input class="input" name="rua" type="text" [(ngModel)]="rua" [disabled]="rua || !cidade">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="numero">Numero</label>
+                        <input class="input" type="email"  [disabled]="!cidade">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="complemento">Complemento</label>
+                        <input class="input" type="tel" [disabled]="!cidade">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="bairro">Bairro</label>
+                        <input [(ngModel)]="bairro" name="bairro" class="input form-control" type="text" [disabled]="bairro || !cidade">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <label class="label" for="cidade">Cidade</label>
+                        <input [(ngModel)]="cidade" name="cidade" class="input form-control" type="text" [disabled]="!cidade || cidade">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="form-acoes">
+            <button class="btn btn-submit" type="submit">Salvar</button>
+            <button class="btn btn-voltar" >Voltar</button>
+        </div>
+    </form>
+</div>

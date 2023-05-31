@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'clientes/novo',
     component: InserirEditarComponent
+  },
+  {
+    path: 'clientes/editar/:id',
+    component: InserirEditarComponent
   }
 ];
 
