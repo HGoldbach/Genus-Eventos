@@ -1,14 +1,15 @@
 <app-header></app-header>
 <div class="container">
     <h1>Novo Evento</h1>
-    <form action="">
+    <form #formEvento="ngForm">
         <div class="field field-cliente">
             <h3>Cliente</h3>
             <p class="control">
-                <input type="text" name="cpf" id="cpf" class="input cliente-cpf" placeholder="CPF">
+                <input type="text" name="cpf" id="cpf" [(ngModel)]="cliente.cpf" #cpf="ngModel" class="input cliente-cpf" placeholder="CPF">
+                <button (click)="buscarCliente($event)">Buscar</button>
             </p>
             <p class="control">
-                <input type="text" name="nome" id="nome" class="input cliente-nome" placeholder="Nome">
+                <input [disabled]="true" type="text" name="nome" id="nome" [(ngModel)]="cliente.nome" #nome="ngModel" class="input cliente-nome" placeholder="Nome">
             </p>
         </div>
         <div class="field field-evento">
@@ -16,24 +17,24 @@
             <div class="dados-evento">
                 <div class="control tipo-evento">
                     <label for="tipo">Tipo de evento</label>
-                    <select name="tipo" id="tipo">
-                        <option value="casamento">Casamento</option>
+                    <select name="tipo" id="tipo" [(ngModel)]="evento.tipo">
+                        <option value="casamento">CASAMENTO</option>
                         <option value="aniversario">Aniversário</option>
                         <option value="festa">Festa</option>
                     </select>
                 </div>
                 <div class="control data-evento">
                     <label for="data">Data</label>
-                    <input type="date" name="data" id="data" class="input input-data">
+                    <input type="date" name="data" id="data" class="input input-data" [(ngModel)]="evento.data" required>
                 </div>
                 <div class="control horario-evento">
                     <div class="horario-inicio">
                         <label for="inicio">Horário Início</label>
-                        <input type="text" name="inicio" id="inicio" class="input-inicio">
+                        <input type="text" name="inicio" id="inicio" class="input-inicio" mask="00:00" [(ngModel)]="evento.inicio">
                     </div>
                     <div class="horario-fim">
                         <label for="fim">Horário Fim</label>
-                        <input type="text" name="fim" id="fim" class="input-fim">
+                        <input type="text" name="fim" id="fim" class="input-fim" mask="00:00" [(ngModel)]="evento.fim">
                     </div>
                 </div>
             </div>
@@ -41,37 +42,17 @@
         <div class="field field-profissionais">
             <h3>Profissionais</h3>
             <div class="profissional">
-                <div class="control especialidade-profissional">
-                    <label for="especialidade">Especialidade</label>
-                    <select name="especialidade" id="especialidade">
-                        <option value="cozinheiro">Cozinheiro</option>
-                        <option value="bartender">Bartender</option>
-                        <option value="musico">Musico</option>
-                    </select>
-                </div>
-                <div class="control nome-profissional">
-                    <label for="nome-prof">Profissional</label>
-                    <select name="n-profissional" id="n-profissional">
-                        <option value="jonas">Jonas Maciel</option>
-                        <option value="claudia">Claudia Dinamo</option>
-                        <option value="beatriz">Beatriz Nascimento</option>
-                    </select>
+                <div class="control" *ngFor="let especialidade of especialidades">
+                    <label>
+                        <input type="checkbox" [value]="especialidade.descricao" (change)="handleCheckboxChange($event, especialidade.descricao)">
+                        {{especialidade.descricao}}
+                    </label>
                 </div>
             </div>
-            <button class="novo-profissional"><i class="fa fa-plus"></i></button>
         </div>
-        <div class="field field-servicos">
-            <h3>Serviços</h3>
-            <button>Inserir serviço</button>
-        </div>
-        <div class="field field-materiais">
-            <h3>Materiais</h3>
-            <button>Inserir Materiais</button>
-        </div>
-        <p class="valor-total">Valor total:<span>R$$$$</span></p>
         <div class="acoes">
-            <button class="btn btn-cadastrar">Cadastrar</button>
-            <button class="btn btn-voltar">Voltar</button>
+            <button class="btn btn-cadastrar" (click)="salvarEvento()">Cadastrar</button>
+            <button class="btn btn-voltar" (click)="teste()">Voltar</button>
         </div>
     </form>
 </div>

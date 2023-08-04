@@ -7,83 +7,37 @@
                 <h2>Dados Pessoais</h2>
                 <div class="field">
                     <p class="control">
-                        <label class="label" for="nome">Nome Completo</label>
-                        <input class="input" type="text">
+                        <input class="input" name="nome" type="text"  placeholder="Nome Completo" [(ngModel)]="profissional.nome" #nome="ngModel">
                     </p>
                 </div>
                 <div class="field">
                     <p class="control">
-                        <label class="label" for="cpf">CPF</label>
-                        <input class="input" type="text" mask="000.000.000-00">
+                        <input class="input" name="cpf" type="text" [(ngModel)]="profissional.cpf" #cpf="ngModel" mask="000.000.000-00" placeholder="CPF" required>
                     </p>
                 </div>
                 <div class="field">
                     <p class="control">
-                        <label class="label" for="email">Email</label>
-                        <input class="input" type="email">
+                        <input class="input" name="email" type="email" [(ngModel)]="profissional.email" #email="ngModel" placeholder="Email" required>
                     </p>
                 </div>
                 <div class="field">
                     <p class="control">
-                        <label class="label" for="telefone">Telefone</label>
-                        <input class="input" mask="(00) 00000-0000"  type="tel">
+                        <input class="input" name="telefone" mask="(00) 00000-0000" type="tel" [(ngModel)]="profissional.telefone" #telefone="ngModel" placeholder="Telefone" required>
                     </p>
                 </div>
                 <div class="control">
                     <label class="label" for="especialidade">Especialidade</label>
                     <div class="select">
-                        <select name="especialidade" id="especialidade">
-                            <option value="cozinheiro">Cozinheiro</option>
-                            <option value="bartender">Bartender</option>
-                            <option value="musico">Músico</option>
-                            <option value="garcom">Garçom</option>
+                        <select name="descricao" id="descricao" [(ngModel)]="especialidade.descricao" #descricao="ngModel">
+                            <option *ngFor="let especialidade of especialidades" [value]="especialidade.descricao">{{especialidade.descricao}}</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class="dados-endereco">
-                <h2>Endereço</h2>
-                <div class="field">
-                    <p class="control ctl-cep">
-                        <label class="label" for="cep">CEP</label>
-                        <input class="input input-cep" (keyup)="buscarEndereco(cep.value)" #cep mask="00000-000" type="text">
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control">
-                        <label class="label" for="rua">Rua</label>
-                        <input class="input" name="rua" type="text" [(ngModel)]="rua" [disabled]="rua || !cidade">
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control">
-                        <label class="label" for="numero">Numero</label>
-                        <input class="input" type="email"  [disabled]="!cidade">
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control">
-                        <label class="label" for="complemento">Complemento</label>
-                        <input class="input" type="tel" [disabled]="!cidade">
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control">
-                        <label class="label" for="bairro">Bairro</label>
-                        <input [(ngModel)]="bairro" name="bairro" class="input form-control" type="text" [disabled]="bairro || !cidade">
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control">
-                        <label class="label" for="cidade">Cidade</label>
-                        <input [(ngModel)]="cidade" name="cidade" class="input form-control" type="text" [disabled]="!cidade || cidade">
-                    </p>
-                </div>
-            </div>
         </div>
         <div class="form-acoes">
-            <button class="btn btn-submit" type="submit">Salvar</button>
-            <button class="btn btn-voltar" >Voltar</button>
+            <button class="btn btn-submit" (click)="salvarProfissional()">Salvar</button>
+            <button class="btn btn-voltar" routerLink="/administrador/profissionais">Voltar</button>
         </div>
     </form>
 </div>

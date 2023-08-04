@@ -9,6 +9,7 @@ import { ClienteModule } from './cliente/cliente.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdministradorModule,
     SharedModule,
     BrowserAnimationsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

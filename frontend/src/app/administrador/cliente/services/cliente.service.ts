@@ -10,7 +10,7 @@ import { Cliente } from 'src/app/shared';
 export class ClienteService {
 
   VIACEP_BASE_URL = "https://viacep.com.br/ws/";
-  CLIENTE_BASE_URL = "http://localhost:5010/clientes";
+  CLIENTE_BASE_URL = "http://localhost:5001/cliente";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -32,6 +32,10 @@ export class ClienteService {
     return this.httpClient.get<Cliente>(this.CLIENTE_BASE_URL + "/" +  id, this.httpOptions);
   }
 
+  buscarClientePorCpf(cpf: string): Observable<Cliente> {
+    return this.httpClient.get<Cliente>(this.CLIENTE_BASE_URL + "/cpf/" + cpf, this.httpOptions);
+  }
+
   removerCliente(id: number): Observable<Cliente> {
     return this.httpClient.delete<Cliente>(this.CLIENTE_BASE_URL + "/" + id, this.httpOptions);
   }
@@ -40,7 +44,7 @@ export class ClienteService {
     return this.httpClient.post<Cliente>(this.CLIENTE_BASE_URL, JSON.stringify(cliente), this.httpOptions);
   }
   
-  alterarCliente(id: number, cliente: Cliente): Observable<Cliente> {
+  alterarCliente(cliente: Cliente): Observable<Cliente> {
     return this.httpClient.put<Cliente>(this.CLIENTE_BASE_URL, JSON.stringify(cliente), this.httpOptions);
   }
 

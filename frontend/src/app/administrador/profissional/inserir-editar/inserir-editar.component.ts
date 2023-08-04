@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ProfissionalService } from '../services';
-import { Profissional } from 'src/app/shared';
+import { Especialidade, Profissional } from 'src/app/shared';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-inserir-editar',
@@ -10,29 +11,55 @@ import { Profissional } from 'src/app/shared';
 })
 export class InserirEditarComponent implements OnInit{
   @ViewChild('formProfissional') formCliente!: NgForm;
-  rua: string = '';
-  bairro: string = '';
-  cidade: string = '';
   profissional: Profissional = new Profissional();
-  myData$: any;
+  novoProfissional: boolean = true;
+  especialidades: Especialidade[] = [];
+  especialidade: Especialidade = new Especialidade();
+  id!: string;
+
+  constructor(private profissionalService: ProfissionalService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.especialidade = new Especialidade();
+    this.profissional = new Profissional();
+    this.id = this.route.snapshot.params['id'];
+    this.novoProfissional = !this.id;
+    this.especialidades = this.buscarEspecialidades();
 
+    if (!this.novoProfissional) {
+      this.profissionalService.buscarProfissionalPorId(+this.id).subscribe(profissional => {
+        this.profissional = profissional;
+      })
+      console.log(this.profissional)
+    }
   }
 
-  constructor(private profissionalService: ProfissionalService) { }
+  salvarProfissional(): void {
+    if (this.formCliente.form.valid) {
+      this.profissional.especialidade = this.especialidade;
+      console.log(this.profissional);
+      if (this.novoProfissional) {
+        this.profissionalService.salvarProfissional(this.profissional).subscribe(() => {
+          this.router.navigate(["/administrador/profissionais"]);
+        })
+      } else {
+        this.profissionalService.alterarProfissional(this.profissional).subscribe(() => {
+          this.router.navigate(["/administrador/profissionais"]);
+        })
+      }
+    }
+  }
 
-
-  buscarEndereco(cep: string) {
-    this.profissionalService.buscarEndereco(cep).subscribe(data => {
-      this.myData$ = data;
-      this.prencherEndereco(this.myData$);
+  buscarEspecialidades() : Especialidade[] {
+    this.profissionalService.buscarEspecialidades().subscribe({
+      next: (data: Especialidade[]) => {
+        if(data == null) {
+          this.especialidades = [];
+        } else {
+          this.especialidades = data;
+        }
+      }
     })
-  }
-
-  prencherEndereco(endereco: any): void {
-    this.rua = endereco?.logradouro;
-    this.bairro = endereco?.bairro;
-    this.cidade = endereco?.localidade;
+    return this.especialidades;
   }
 }

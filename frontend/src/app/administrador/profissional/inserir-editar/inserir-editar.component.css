@@ -20,41 +20,37 @@ h1 {
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
     margin: 4rem 0;
-    color: #4E2A84;
 }
 
 h2 {
-    font-size: 1.7rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
-    margin: .5rem 0 3rem;
+    margin: .5rem 0;
 }
 
 input {
     font-family: "Poppins", sans-serif;
-    width: 400px;
-    height: 45px;
+    width: 500px;
+    height: 50px;
     padding: 1rem;
-    background-color: #26474622;
     border: none;
     font-size: 1rem;
     color: grey;
+    background-color: #26474622;
+    
 }
-
-
 
 select {
     font-family: "Poppins", sans-serif;
-    width: 400px;
+    width: 500px;
 }
 
 label {
     font-family: "Poppins", sans-serif;
-
     font-size: .9rem;
 }
-
 
 .form-acoes {
     text-align: center;

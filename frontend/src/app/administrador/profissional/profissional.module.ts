@@ -9,7 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMaskModule } from 'ngx-mask';
-
+import { ProfissionalService } from './services';
+import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,13 @@ import { NgxMaskModule } from 'ngx-mask';
     FormsModule,
     RouterModule,
     HttpClientModule,
-    NgxMaskModule.forChild() 
+    NgxMaskModule.forChild(),
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule
+  ],
+  providers: [
+    ProfissionalService
   ]
 })
 export class ProfissionalModule { }

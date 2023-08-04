@@ -2,12 +2,16 @@
 <div class="container">
     <h1>Profissionais</h1>
     <div class="novo-field">
-        <a class="btn-novo btn-cliente" role="button" routerLink="./novo"><i class="fa fa-plus"></i> Novo Profissional</a>
+        <a mat-raised-button class="btn-novo" role="button" routerLink="./novo"><i class="fa fa-plus"></i> Novo
+            Profissional</a>
+        <a mat-raised-button class="btn-novo" style="margin-right: auto;"><i class="fa fa-plus"></i> Nova
+            Especialidade</a>
         <div class="searchbar">
             <input class="search_input" type="text" name="termoDeBusca" placeholder="Pesquisar profissional...">
             <div class="search_icon"><i class="fas fa-search"></i></div>
         </div>
     </div>
+
     <div class="table">
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
@@ -24,44 +28,19 @@
         <div class="tbl-content">
             <table cellpadding="0" cellspacing="0" border="0">
                 <tbody>
-                    <tr>
-                        <td>AAX</td>
-                        <td>ADELAIDE</td>
-                        <td>ADELAIDE</td>
+                    <tr *ngFor="let profissional of profissionais">
+                        <td>{{profissional.nome}}</td>
+                        <td>{{profissional.email}}</td>
+                        <td>{{profissional.especialidade?.descricao}}</td>
                         <td style="text-align: center;">
-                            <button class="btn-acao btn-editar">Editar</button>
-                            <button class="btn-acao btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>AAX</td>
-                        <td>ADELAIDE</td>
-                        <td>ADELAIDE</td>
-                        <td style="text-align: center;">
-                            <button class="btn-acao btn-editar">Editar</button>
-                            <button class="btn-acao btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>XXD</td>
-                        <td>ADITYA BIRLA</td>
-                        <td>ADITYA BIRLA</td>
-                        <td style="text-align: center;">
-                            <button class="btn-acao btn-editar">Editar</button>
-                            <button class="btn-acao btn-excluir">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>XXD</td>
-                        <td>ADITYA BIRLA</td>
-                        <td>ADITYA BIRLA</td>
-                        <td style="text-align: center;">
-                            <button class="btn-acao btn-editar">Editar</button>
-                            <button class="btn-acao btn-excluir">Excluir</button>
+                            <button mat-raised-button class="btn-acao btn-editar" [routerLink]="['/administrador/profissionais/editar', profissional.id]">Editar</button>
+                            <button mat-raised-button class="btn-acao btn-excluir" (click)="removerProfissional($event, profissional)">Excluir</button>
                         </td>
                     </tr>
                 </tbody>
+                <p *ngIf="profissionais.length==0">Nenhum profissional cadastrado</p>
             </table>
         </div>
     </div>
+
 </div>

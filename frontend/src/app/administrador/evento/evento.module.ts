@@ -5,17 +5,37 @@ import { EventoRoutingModule } from './evento-routing.module';
 import { ListarComponent } from './listar/listar.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { InserirEditarComponent } from './inserir-editar/inserir-editar.component';
+import { EventoService } from './services';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 @NgModule({
   declarations: [
     ListarComponent,
-    InserirEditarComponent
+    InserirEditarComponent,
   ],
   imports: [
     CommonModule,
     EventoRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    RouterModule,
+    HttpClientModule,
+    NgSelectModule,
+    NgxMaskModule.forRoot(),
+    MatDialogModule,
+    MatButtonModule
+  ],
+  providers: [
+    EventoService
   ]
 })
 export class EventoModule { }

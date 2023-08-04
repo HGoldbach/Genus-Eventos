@@ -1,10 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Profissional } from 'src/app/shared';
+import { ProfissionalService } from '../services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
-export class ListarComponent {
+export class ListarComponent implements OnInit {
+  displayedColumns: string[] = ['nome', 'email', 'especialidade', 'acao'];
+  profissionais: Profissional[] = [];
+  
+  constructor(private profissionalService: ProfissionalService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.profissionais = [];
+    this.profissionais = this.buscarProfissionais();
+  }
+
+
+  buscarProfissionais(): Profissional[] {
+    this.profissionalService.buscarProfissionais().subscribe({
+      next: (data: Profissional[]) => {
+        if (data == null) {
+          this.profissionais = [];
+        } else {
+          this.profissionais = data;
+        }
+      }
+    });
+
+    return this.profissionais;
+  }
+
+  removerProfissional($event: any, profissional: Profissional): void {
+    $event.preventDefault();
+    this.profissionalService.removerProfissional(profissional.id!).subscribe({
+      complete: () => {
+        this.buscarProfissionais();
+      }
+    })
+  }
 
 }

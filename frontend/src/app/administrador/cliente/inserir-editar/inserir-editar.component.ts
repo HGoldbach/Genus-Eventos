@@ -55,7 +55,7 @@ export class InserirEditarComponent implements OnInit {
           this.router.navigate(["/administrador/clientes"]);
         })
       } else {
-        this.clienteService.alterarCliente(+this.id, this.cliente).subscribe(() => {
+        this.clienteService.alterarCliente(this.cliente).subscribe(() => {
           this.router.navigate(["/administrador/clientes"]);
         })
       }
