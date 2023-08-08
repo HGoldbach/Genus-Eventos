@@ -91,7 +91,7 @@ h1 {
 table {
     width: 100%;
     table-layout: fixed;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif; 
 }
 
 .tbl-header {

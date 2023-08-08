@@ -50,7 +50,7 @@ export class InserirEditarComponent implements OnInit {
   salvarEvento(): void {
     this.evento.cliente = this.cliente;
     console.log(this.evento);
-    this.evento.profissionais = this.profissionais;
+    this.evento.profissional = this.profissionais;
     this.eventoService.salvarEvento(this.evento).subscribe(() => {
       this.router.navigate(['/administrador/eventos']);
     })

@@ -27,15 +27,9 @@ h1 {
 }
 
 .btn-novo {
-    background-color: #004F98;
-    font-size: 1rem;
-    text-align: center;
-    padding: 1rem;
-    color: white;
-}
-
-.btn-novo:hover {
-    background-color: #004F98d8;
+    padding: 1.8rem !important;
+    color: #004F98 !important;
+    font-weight: 500 !important;
 }
 
 .searchbar {
@@ -107,7 +101,7 @@ table {
 
 .tbl-content {
     height: 300px;
-    margin-top: -1px;
+    margin-top: -2px;
     
 }
 
@@ -127,12 +121,10 @@ td {
     font-weight: 300;
     font-size: 1rem;
     color: #004F98;
-    border-bottom: 2px solid #004F98;
 }
 
 tbody {
-    border-bottom: 2px solid #004F98;
-
+    box-shadow: 0rem .5rem 1.5rem #0505055b;
 }
 
 .btn-acao {

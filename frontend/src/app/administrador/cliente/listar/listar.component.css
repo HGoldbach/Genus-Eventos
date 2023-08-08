@@ -20,15 +20,9 @@ h1 {
 }
 
 .btn-novo {
-    background-color: #264746;
-    font-size: 1rem;
-    text-align: center;
-    padding: 1rem;
-    color: white;
-}
-
-.btn-novo:hover {
-    background-color: #264746d8;
+    padding: 1.8rem !important;
+    color: #264746 !important;
+    font-weight: 500 !important;
 }
 
 .searchbar {
@@ -88,6 +82,7 @@ h1 {
     font-family: "Poppins", sans-serif;
   }
 
+
 table {
     width: 100%;
     table-layout: fixed;
@@ -101,14 +96,14 @@ table {
 
 .tbl-content {
     height: 300px;
-    
-    
+    margin-top: -2px;
 }
 
 th {
     padding: 20px 15px;
     text-align: left;
     font-weight: 500;
+    font-size: 1rem;
     color: white !important;
     text-transform: uppercase;
 }
@@ -117,16 +112,15 @@ td {
     padding: 15px;
     text-align: left;
     vertical-align: middle;
+    font-size: 1rem;
     font-weight: 300;
     color: #25c481;
-    border-bottom: 2px solid #264746;
+    
 }
 
 tbody {
-    border-bottom: 2px solid #264746;
-
+    box-shadow: 0rem .5rem 1.5rem #0505055b;
 }
-
 
 .btn-acao {
     border: none;

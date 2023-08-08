@@ -27,6 +27,8 @@ a, a:visited, a:active {
   height: 98.3vh;
   width: 90%;
   margin-inline: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav__items {

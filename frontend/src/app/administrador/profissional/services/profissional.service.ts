@@ -8,8 +8,8 @@ import { Especialidade, Profissional } from 'src/app/shared';
 })
 export class ProfissionalService {
   VIACEP_BASE_URL = "https://viacep.com.br/ws/";
-  PROFISSIONAL_BASE_URL = "http://localhost:5001/profissional";
-  ESPECIALIDADE_BASE_URL = "http://localhost:5001/especialidade";
+  PROFISSIONAL_BASE_URL = "http://localhost:8080/api/profissionais";
+  ESPECIALIDADE_BASE_URL = "http://localhost:8080/api/especialidades";
 
   httpOptions = {
     headers: new HttpHeaders({

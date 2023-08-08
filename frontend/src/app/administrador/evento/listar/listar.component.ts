@@ -14,6 +14,9 @@ export class ListarComponent implements OnInit {
   ngOnInit(): void {
     this.eventos = [];
     this.buscarEventos();
+    setTimeout(() => {
+      console.log(this.eventos)
+    },1000);
   }
 
   constructor(private eventoService: EventoService) { }

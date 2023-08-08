@@ -10,7 +10,7 @@ import { Cliente } from 'src/app/shared';
 export class ClienteService {
 
   VIACEP_BASE_URL = "https://viacep.com.br/ws/";
-  CLIENTE_BASE_URL = "http://localhost:5001/cliente";
+  CLIENTE_BASE_URL = "http://localhost:8080/api/clientes";
 
   httpOptions = {
     headers: new HttpHeaders({

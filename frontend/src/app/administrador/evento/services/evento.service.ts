@@ -7,7 +7,7 @@ import { Evento } from 'src/app/shared';
   providedIn: 'root'
 })
 export class EventoService {
-  private EVENTO_BASE_URL = 'http://localhost:5001/evento'
+  private EVENTO_BASE_URL = 'http://localhost:8080/api/eventos'
 
   private HttpOptions = {
     headers : new HttpHeaders({

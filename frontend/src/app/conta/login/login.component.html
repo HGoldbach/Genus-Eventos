@@ -1,18 +1,18 @@
 <section class="hero is-fullheight">
     <div class="container">
         <h1>Login</h1>
-        <form class="form">
+        <form #formConta="ngForm" class="form">
             <div class="field">
                 <p class="control">
-                  <input class="input" type="email" placeholder="Email">
+                  <input name="usuario" class="input" type="email" placeholder="Email" [(ngModel)]="conta.usuario" #usuario="ngModel">
                 </p>
               </div>
               <div class="field">
                 <p class="control">
-                  <input class="input" type="password" placeholder="Senha">
+                  <input name="senha" class="input" type="password" placeholder="Senha" [(ngModel)]="conta.senha" #senha="ngModel">
                 </p>
               </div>
-              <button class="btn-form" type="submit">Entrar</button>
+              <button class="btn-form" (click)="login()">Entrar</button>
               <p>Ainda não possuí uma conta?<a routerLink="/conta/registrar"> Criar Conta</a></p>
         </form>
     </div>

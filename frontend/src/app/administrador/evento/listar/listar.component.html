@@ -2,7 +2,7 @@
 <div class="container">
     <h1>Eventos</h1>
     <div class="novo-field">
-        <a class="btn-novo btn-cliente" role="button" routerLink="./novo"><i class="fa fa-plus"></i> Novo Evento</a>
+        <a mat-raised-button class="btn-novo btn-cliente" role="button" routerLink="./novo"><i class="fa fa-plus"></i> Novo Evento</a>
         <div class="searchbar">
             <input class="search_input" type="text" name="termoDeBusca" placeholder="Pesquisar evento...">
             <div class="search_icon"><i class="fas fa-search"></i></div>
@@ -27,9 +27,9 @@
                 <tbody>
                     <tr *ngFor="let evento of eventos">
                         <td>20/20/2202</td>
-                        <td>{{evento.tipo}}</td>
+                        <td>{{evento.descricao}}</td>
                         <td>{{evento.cliente?.nome}}</td>
-                        <td><p *ngFor="let profissional of evento.profissionais">{{profissional.especialidade?.descricao}}</p></td>
+                        <td><p *ngFor="let profissional of evento.profissional">{{profissional.especialidade?.descricao}}</p></td>
                         <td style="text-align: center;">
                             <button class="btn-acao btn-editar" (click)="teste(evento)">Editar</button>
                             <button class="btn-acao btn-excluir">Excluir</button>
