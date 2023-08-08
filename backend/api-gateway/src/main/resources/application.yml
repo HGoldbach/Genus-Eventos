@@ -1,0 +1,85 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: 'http://localhost:4200'
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - id: especialidade-service
+          uri: lb://profissional-service
+          predicates:
+            - Path=/api/especialidades
+        - id: cliente-service-route-1
+          uri: lb://cliente-service
+          predicates:
+            - Path=/api/clientes
+        - id: cliente-service-route-2
+          uri: lb://cliente-service
+          predicates:
+            - Path=/api/clientes/{id}
+        - id: cliente-service-route-3
+          uri: lb://cliente-service
+          predicates:
+            - Path=/api/clientes/cpf/{cpf}
+        - id: evento-service-route-1
+          uri: lb://evento-service
+          predicates:
+            - Path=/api/eventos
+        - id: evento-service-route-2
+          uri: lb://evento-service
+          predicates:
+            - Path=/api/eventos/{id}
+        - id: profissional-service-route-1
+          uri: lb://profissional-service
+          predicates:
+            - Path=/api/profissionais
+        - id: profissional-service-route-2
+          uri: lb://profissional-service
+          predicates:
+            - Path=/api/profissionais/{id}
+        - id: profissional-service-route-3
+          uri: lb://profissional-service
+          predicates:
+            - Path=/api/profissionais/especialidade/{especialidade}
+        - id: discovery-service
+          uri: http://localhost:8761
+          predicates:
+            - Path=/eureka/web
+          filters:
+            - SetPath=/
+        - id: discovery-service-static
+          uri: http://localhost:8761
+          predicates:
+            - Path=/eureka/**
+  application:
+    name: api-gateway
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway:
+            route:
+              RouteDefinitionLocator: INFO
+            nodeValue: TRACE
+    root: INFO
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      register-with-eureka: true
+      fetch-registry: true
+  instance:
+    hostname: localhost
