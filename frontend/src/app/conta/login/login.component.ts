@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit{
     this.contaService.login(this.conta).subscribe({
       complete: () => {
         console.log("SUCESSO!");
-        this.router.navigate(['/administrador/eventos'])
+        this.router.navigate(['/usuario'])
       },
       error: () => {
         console.log("Erro ao logar");

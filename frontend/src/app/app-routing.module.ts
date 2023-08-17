@@ -3,9 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home';
 import { ContaModule } from './conta/conta.module';
 import { AdministradorModule } from './administrador/administrador.module';
-import { ClienteModule } from './administrador';
+import { ClienteAdmModule } from './administrador';
 import { EventoModule } from './administrador/evento';
 import { ProfissionalModule } from './administrador/profissional/profissional.module';
+import { UsuarioModule } from './usuario';
 
 
 
@@ -26,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'administrador/clientes',
-    loadChildren: () => ClienteModule
+    loadChildren: () => ClienteAdmModule
   },
   {
     path: 'administrador/eventos',
@@ -35,8 +36,11 @@ const routes: Routes = [
   {
     path: 'administrador/profissionais',
     loadChildren: () => ProfissionalModule
+  },
+  {
+    path: 'usuario',
+    loadChildren: () => UsuarioModule
   }
-  
 ];
 
 @NgModule({

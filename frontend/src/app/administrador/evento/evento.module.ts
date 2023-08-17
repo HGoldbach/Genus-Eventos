@@ -34,7 +34,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     NgxMaskModule.forRoot(),
     MatButtonModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [
     EventoService

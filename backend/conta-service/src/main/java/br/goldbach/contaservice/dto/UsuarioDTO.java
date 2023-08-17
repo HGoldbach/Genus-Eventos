@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class ContaDTO implements Serializable {
-    private Long id;
+@NoArgsConstructor
+public class UsuarioDTO implements Serializable {
+    private String nome;
+    private String cpf;
     private String email;
+    private String telefone;
     private String senha;
 }

@@ -30,7 +30,8 @@ input {
     border-radius: 5rem;
     background-color: rgba(255, 255, 255, 0.235);
     border: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    text-align: center;
     color: hsl(161deg, 97%, 47%);
 }
 

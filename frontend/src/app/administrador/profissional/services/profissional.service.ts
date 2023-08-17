@@ -47,5 +47,9 @@ export class ProfissionalService {
     return this.httpClient.get<Especialidade[]>(this.ESPECIALIDADE_BASE_URL, this.httpOptions);
   }
 
+  salvarEspecialidade(especialidade: Especialidade): Observable<Especialidade> {
+    return this.httpClient.post<Especialidade>(this.ESPECIALIDADE_BASE_URL, JSON.stringify(especialidade), this.httpOptions);
+  }
+
 
 }

@@ -10,6 +10,7 @@
         <module name="api-gateway" />
         <module name="cliente-service" />
         <module name="evento-service" />
+        <module name="conta-service" />
         <module name="discovery-server" />
         <module name="profissional-service" />
       </profile>
@@ -19,6 +20,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="cliente-service" options="-parameters" />
+      <module name="conta-service" options="-parameters" />
       <module name="discovery-server" options="-parameters" />
       <module name="evento-service" options="-parameters" />
       <module name="profissional-service" options="-parameters" />

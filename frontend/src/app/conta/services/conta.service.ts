@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Conta } from 'src/app/shared';
+import { Cliente, Conta } from 'src/app/shared';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +18,8 @@ export class ContaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  criarConta(conta: Conta): Observable<Conta> {
-    return this.httpClient.post<Conta>(this.CONTA_BASE_URL, JSON.stringify(conta), this.HttpOptions);
+  criarConta(cliente: Cliente): Observable<Cliente> {
+    return this.httpClient.post<Cliente>(this.CONTA_BASE_URL, JSON.stringify(cliente), this.HttpOptions);
   } 
 
   login(conta: Conta): Observable<boolean> {

@@ -4,7 +4,7 @@
     <div class="novo-field">
         <a mat-raised-button class="btn-novo" role="button" routerLink="./novo"><i class="fa fa-plus"></i> Novo
             Profissional</a>
-        <a mat-raised-button class="btn-novo" style="margin-right: auto;"><i class="fa fa-plus"></i> Nova
+        <a mat-raised-button class="btn-novo" (click)="openModal(modal)" style="margin-right: auto;"><i class="fa fa-plus"></i> Nova
             Especialidade</a>  
         <div class="searchbar">
             <input class="search_input" type="text" name="termoDeBusca" placeholder="Pesquisar profissional...">
@@ -42,5 +42,21 @@
             </table>
         </div>
     </div>
-
+    <div class="modal" #modal>
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Nova Especialidade</p>
+                <button class="delete" aria-label="close" (click)="closeModal(modal)"></button>
+            </header>
+            <section class="modal-card-body">
+                <label>Descrição</label>
+                <input type="text" class="input" #descricao name="descricao" id="descricao">
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" (click)="salvarEspecialidade(modal, descricao.value)">Salvar</button>
+                <button class="button" (click)="closeModal(modal)">Cancelar</button>
+            </footer>
+        </div>
+    </div>
 </div>

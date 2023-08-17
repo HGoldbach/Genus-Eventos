@@ -35,4 +35,4 @@ import { MatTableModule } from '@angular/material/table';
     ClienteService
   ]
 })
-export class ClienteModule { }
+export class ClienteAdmModule { }

@@ -4,21 +4,23 @@
     <form #formEvento="ngForm">
         <div class="field field-cliente">
             <h3>Cliente</h3>
-            <p class="control">
-                <input type="text" name="cpf" id="cpf" [(ngModel)]="cliente.cpf" #cpf="ngModel" class="input cliente-cpf" placeholder="CPF">
-                <button (click)="buscarCliente($event)">Buscar</button>
-            </p>
-            <p class="control">
-                <input [disabled]="true" type="text" name="nome" id="nome" [(ngModel)]="cliente.nome" #nome="ngModel" class="input cliente-nome" placeholder="Nome">
-            </p>
+            <div class="control">
+                <label for="cpf">CPF</label><br>
+                <input type="text" name="cpf" id="cpf" [(ngModel)]="cliente.cpf" #cpf="ngModel" class="input cliente-cpf">
+                <button class="button is-link" (click)="buscarCliente($event)">Buscar</button>
+            </div>
+            <div class="control">
+                <label for="nome">Nome</label><br>
+                <input [disabled]="true" type="text" name="nome" id="nome" [(ngModel)]="cliente.nome" #nome="ngModel" class="input cliente-nome">
+            </div>
         </div>
         <div class="field field-evento">
             <h3>Dados do evento</h3>
             <div class="dados-evento">
-                <div class="control tipo-evento">
-                    <label for="tipo">Tipo de evento</label>
-                    <select name="tipo" id="tipo" [(ngModel)]="evento.descricao">
-                        <option value="casamento">CASAMENTO</option>
+                <div class="tipo-evento">
+                    <label for="tipo">Tipo do Evento</label><br>
+                    <select [(ngModel)]="evento.descricao" class="tip-evento select" name="tipo" id="tipo">
+                        <option value="casamento">Casamento</option>
                         <option value="aniversario">Aniversário</option>
                         <option value="festa">Festa</option>
                     </select>
@@ -27,24 +29,22 @@
                     <label for="data">Data</label>
                     <input type="date" name="data" id="data" class="input input-data" [(ngModel)]="evento.data" required>
                 </div>
-                <div class="control horario-evento">
-                    <div class="horario-inicio">
-                        <label for="inicio">Horário Início</label>
-                        <input type="text" name="inicio" id="inicio" class="input-inicio" mask="00:00" [(ngModel)]="evento.inicio">
-                    </div>
-                    <div class="horario-fim">
-                        <label for="fim">Horário Fim</label>
-                        <input type="text" name="fim" id="fim" class="input-fim" mask="00:00" [(ngModel)]="evento.fim">
-                    </div>
+                <div class="horario-inicio">
+                    <label for="inicio">Horário Início</label>
+                    <input type="text" name="inicio" id="inicio" class="input input-inicio" mask="00:00" [(ngModel)]="evento.inicio">
+                </div>
+                <div class="horario-fim">
+                    <label for="fim">Horário Fim</label>
+                    <input type="text" name="fim" id="fim" class="input input-fim" mask="00:00" [(ngModel)]="evento.fim">
                 </div>
             </div>
         </div>
         <div class="field field-profissionais">
             <h3>Profissionais</h3>
-            <div class="profissional">
+            <div class="profissional-checkbox">
                 <div class="control" *ngFor="let especialidade of especialidades">
-                    <label>
-                        <input type="checkbox" [value]="especialidade.descricao" (change)="handleCheckboxChange($event, especialidade.descricao)">
+                    <label class="checkbox">
+                        <input type="checkbox" class="checkbox" [value]="especialidade.descricao" (change)="handleCheckboxChange($event, especialidade.descricao)">
                         {{especialidade.descricao}}
                     </label>
                 </div>

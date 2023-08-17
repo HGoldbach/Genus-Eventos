@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { ContaModule } from './conta/conta.module';
-import { ClienteModule } from './cliente/cliente.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
-
-
+import { UsuarioModule } from './usuario';
 
 @NgModule({
   declarations: [
@@ -22,8 +19,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     BrowserModule,
     AppRoutingModule,
     ContaModule,
-    ClienteModule,
     AdministradorModule,
+    UsuarioModule,
     SharedModule,
     BrowserAnimationsModule,
     NgSelectModule

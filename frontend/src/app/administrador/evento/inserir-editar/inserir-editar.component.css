@@ -17,12 +17,13 @@ h1 {
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #004F98;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
+    margin: 4rem 0 2rem;
 }
 
 form {
@@ -32,19 +33,10 @@ form {
     font-family: "Poppins", sans-serif;
 }
 
-select {
-    font-family: "Poppins", sans-serif;
-    width: 200px;
-    height: 40px;
-}
 
-.field-evento {
-    grid-column: 2/4;
-    
-}
 
 .field-cliente {
-    text-align: center;
+    margin-inline: auto;
 }
 
 .field-cliente .control input {
@@ -52,95 +44,33 @@ select {
     width: 300px;
     height: 40px;
     padding: 1rem;
-    background-color: #26474622;
-    border: none;
     font-size: 1rem;
     color: grey;
 }
 
 .dados-evento {
-    width: 700px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: .5rem;
-    margin-inline: auto;
-    text-align: center;
-    
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
-.dados-evento label {
-    font-weight: bold;
-    display: block;
-}
-
-
-.data-evento input {
-    width: 200px;
-}
-
-.horario-evento {
-    grid-column: 1/3;
-    display: flex;
-    justify-content: space-around;
-}
-
-.horario-evento input {
-    font-family: "Poppins", sans-serif;
-    width: 200px;
-    height: 40px;
-    padding: 1rem;
-    font-size: 1rem;
-    color: grey;
+select {
+    width: 220px;
+    cursor: pointer;
 }
 
 
 .field-profissionais {
-    text-align: end;
-}
-
-.profissional div { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profissional select {
+    margin-inline: auto;
     width: 300px;
-    margin-bottom: 1rem;
 }
 
-.profissional label {
-    align-self: flex-start;
-    margin-left: 4.7rem;
+.profissional-checkbox {
+    margin-top: 3.2rem;
 }
 
-.novo-profissional {
-    margin-right: 4.6rem;
-}
-
-.field-servicos, .field-materiais {
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-}
-
-.field-servicos {
-    margin-left: 6rem;
-}
-
-.field-materiais {
-    margin-right: 6rem;
-}
-
-.field-servicos button, .field-materiais button {
-    font-family: "Poppins", sans-serif;
-    width: 200px;
-    height: 40px;
-}
-
-.valor-total {
-    grid-column: 3/4;
-    margin-top: -5rem;
-    font-size: 2rem;
+.checkbox {
+    font-size: 1.1rem;
 }
 
 .acoes {
@@ -169,4 +99,9 @@ select {
 
 .mat-cpf {
     width: 1100px;
+}
+
+.cliente-cpf {
+    width: 208px !important;
+    margin: 0 .5rem .5rem 0;
 }

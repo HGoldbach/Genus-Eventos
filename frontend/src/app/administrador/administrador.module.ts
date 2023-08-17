@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AdministradorRoutingModule } from './administrador-routing.module';
 import { EventoModule } from './evento/evento.module';
-import { ClienteModule } from './cliente/cliente.module';
+import { ClienteAdmModule } from './cliente/cliente.module';
 import { ProfissionalModule } from './profissional/profissional.module';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
@@ -22,12 +22,12 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     CommonModule,
     AdministradorRoutingModule,
     EventoModule,
-    ClienteModule,
+    ClienteAdmModule,
     ProfissionalModule,
     SharedModule,
     RouterModule,
     FormsModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
   ]
 })
 export class AdministradorModule { }

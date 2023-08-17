@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Profissional } from 'src/app/shared';
+import { Especialidade, Profissional } from 'src/app/shared';
 import { ProfissionalService } from '../services';
 import { Router } from '@angular/router';
 
@@ -43,4 +43,22 @@ export class ListarComponent implements OnInit {
     })
   }
 
+  openModal(modal: HTMLElement) {
+    console.log(modal);
+    modal.classList.add('is-active');
+  }
+
+  closeModal(modal: HTMLElement) {
+    modal.classList.remove('is-active');
+  }
+
+  salvarEspecialidade(modal: HTMLElement, especialidade: string) {
+    if (especialidade.length !== 0) {
+      let novaEspecialidade = new Especialidade(0, especialidade);
+      this.profissionalService.salvarEspecialidade(novaEspecialidade).subscribe(() => {
+        this.closeModal(modal);
+      })
+    }
+
+  }
 }

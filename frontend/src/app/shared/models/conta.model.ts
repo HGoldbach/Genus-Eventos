@@ -1,11 +1,11 @@
 export class Conta {
     id?: number;
-    usuario?: string;
+    email?: string;
     senha?: string;
 
-    constructor(id?: number, usuario?: string, senha?: string) {
+    constructor(id?: number, email?: string, senha?: string) {
         this.id = id;
-        this.usuario = usuario;
+        this.email = email;
         this.senha = senha;
     }
 }
