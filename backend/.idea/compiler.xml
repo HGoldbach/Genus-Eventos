@@ -7,18 +7,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
         <module name="cliente-service" />
         <module name="evento-service" />
         <module name="conta-service" />
+        <module name="auth-service" />
         <module name="discovery-server" />
+        <module name="api-gateway" />
         <module name="profissional-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="conta-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
+      <module name="auth-service" options="-parameters" />
       <module name="cliente-service" options="-parameters" />
       <module name="conta-service" options="-parameters" />
       <module name="discovery-server" options="-parameters" />

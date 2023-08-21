@@ -1,4 +1,4 @@
-package br.goldbach.contaservice.dto;
+package br.goldbach.authservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

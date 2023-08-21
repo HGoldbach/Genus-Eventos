@@ -7,6 +7,7 @@ import br.goldbach.eventoservice.model.Evento;
 import br.goldbach.eventoservice.repository.EventoRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -24,10 +25,10 @@ public class EventoService {
     private final ModelMapper modelMapper;
 
 
-    public ResponseEntity<List<EventoDTO>> buscarTodos() {
+    public ResponseEntity<List<EventoDTO>> buscarTodos(String token) {
         List<EventoDTO> eventos = eventoRepository.findAll()
                 .stream()
-                .map(this::mapToDto)
+                .map(e -> mapToDto(e, token))
                 .toList();
         return ResponseEntity.ok().body(eventos);
     }
@@ -41,9 +42,9 @@ public class EventoService {
         }
     }
 
-    public ResponseEntity<EventoDTO> inserir(EventoDTO eventoDTO) {
+    public ResponseEntity<EventoDTO> inserir(String token, EventoDTO eventoDTO) {
         Evento evento = new Evento();
-        List<Long> profissionaisId = buscarProfissionais(eventoDTO.getProfissional());
+        List<Long> profissionaisId = buscarProfissionais(eventoDTO.getProfissional(), token);
         evento.setDescricao(eventoDTO.getDescricao());
         evento.setClienteId(eventoDTO.getCliente().getId());
         evento.setProfissionalId(profissionaisId);
@@ -51,17 +52,18 @@ public class EventoService {
         return ResponseEntity.ok().body(eventoDTO);
     }
 
-    private List<Long> buscarProfissionais(List<ProfissionalDTO> profissional) {
+    private List<Long> buscarProfissionais(List<ProfissionalDTO> profissional, String token) {
         return profissional.stream()
                 .map(p -> webClientBuilder.build().get()
                         .uri("http://api-gateway/api/profissionais/especialidade/{especialidade}", p.getEspecialidade().getDescricao())
+                        .header(HttpHeaders.AUTHORIZATION, "Bearer " + token)
                         .retrieve()
                         .bodyToMono(ProfissionalDTO.class)
                         .block()).filter(Objects::nonNull)
                 .map(ProfissionalDTO::getId).toList();
     }
 
-    private EventoDTO mapToDto(Evento evento) {
+    private EventoDTO mapToDto(Evento evento, String token) {
         EventoDTO eventoDTO = new EventoDTO();
         eventoDTO.setId(evento.getId());
         eventoDTO.setDescricao(evento.getDescricao());
@@ -69,12 +71,14 @@ public class EventoService {
         List<ProfissionalDTO> profissionais = evento.getProfissionalId().stream()
                 .map(p -> webClientBuilder.build().get()
                         .uri("http://api-gateway/api/profissionais/{id}", p)
+                        .header(HttpHeaders.AUTHORIZATION, "Bearer " + token)
                         .retrieve()
                         .bodyToMono(ProfissionalDTO.class)
                         .block()).toList();
 
         ClienteDTO cliente = webClientBuilder.build().get()
                 .uri("http://api-gateway/api/clientes/{id}", evento.getClienteId())
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + token)
                 .retrieve()
                 .bodyToMono(ClienteDTO.class)
                 .block();

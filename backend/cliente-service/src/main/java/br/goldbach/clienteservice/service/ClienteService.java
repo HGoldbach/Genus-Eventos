@@ -2,6 +2,7 @@ package br.goldbach.clienteservice.service;
 
 import br.goldbach.clienteservice.dto.ClienteDTO;
 import br.goldbach.clienteservice.model.Cliente;
+import br.goldbach.clienteservice.model.UserType;
 import br.goldbach.clienteservice.repository.ClienteRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,11 @@ public class ClienteService {
     }
 
     public ResponseEntity<ClienteDTO> inserir(@RequestBody Cliente cliente) {
+
+        if (cliente.getTipo() == null) {
+            cliente.setTipo(UserType.CLIENTE);
+        }
+
         clienteRepository.save(cliente);
         return ResponseEntity.status(201).body(modelMapper.map(cliente, ClienteDTO.class));
     }
@@ -67,6 +73,15 @@ public class ClienteService {
         Optional<Cliente> cliente = clienteRepository.findById(id);
         if (cliente.isPresent()) {
             clienteRepository.delete(cliente.get());
+            return ResponseEntity.ok().body(modelMapper.map(cliente, ClienteDTO.class));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    public ResponseEntity<ClienteDTO> buscarPorEmail(String email) {
+        Optional<Cliente> cliente = clienteRepository.findByEmail(email);
+        if (cliente.isPresent()) {
             return ResponseEntity.ok().body(modelMapper.map(cliente, ClienteDTO.class));
         } else {
             return ResponseEntity.notFound().build();

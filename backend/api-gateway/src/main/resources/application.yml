@@ -15,42 +15,72 @@ spring:
               - PUT
               - DELETE
       routes:
+        - id: auth-service-route-1
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/conta/**
+
         - id: especialidade-service
           uri: lb://profissional-service
           predicates:
             - Path=/api/especialidades
+          filters:
+            - AuthenticationFilter
+
         - id: cliente-service-route-1
           uri: lb://cliente-service
           predicates:
             - Path=/api/clientes
+          filters:
+            - AuthenticationFilter
         - id: cliente-service-route-2
           uri: lb://cliente-service
           predicates:
             - Path=/api/clientes/{id}
+          filters:
+            - AuthenticationFilter
         - id: cliente-service-route-3
           uri: lb://cliente-service
           predicates:
             - Path=/api/clientes/cpf/{cpf}
+          filters:
+            - AuthenticationFilter
+        - id: cliente-service-route-4
+          uri: lb://cliente-service
+          predicates:
+            - Path=/api/clientes/email/{email}
+          filters:
+            - AuthenticationFilter
         - id: evento-service-route-1
           uri: lb://evento-service
           predicates:
             - Path=/api/eventos
+          filters:
+            - AuthenticationFilter
         - id: evento-service-route-2
           uri: lb://evento-service
           predicates:
             - Path=/api/eventos/{id}
+          filters:
+            - AuthenticationFilter
         - id: profissional-service-route-1
           uri: lb://profissional-service
           predicates:
             - Path=/api/profissionais
+          filters:
+            - AuthenticationFilter
         - id: profissional-service-route-2
           uri: lb://profissional-service
           predicates:
             - Path=/api/profissionais/{id}
+          filters:
+            - AuthenticationFilter
         - id: profissional-service-route-3
           uri: lb://profissional-service
           predicates:
             - Path=/api/profissionais/especialidade/{especialidade}
+          filters:
+            - AuthenticationFilter
         - id: discovery-service
           uri: http://localhost:8761
           predicates:

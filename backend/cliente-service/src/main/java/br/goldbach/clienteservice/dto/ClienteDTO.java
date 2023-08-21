@@ -1,5 +1,6 @@
 package br.goldbach.clienteservice.dto;
 
+import br.goldbach.clienteservice.model.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,4 +16,5 @@ public class ClienteDTO implements Serializable {
     private String cpf;
     private String telefone;
     private String email;
+    private UserType tipo;
 }

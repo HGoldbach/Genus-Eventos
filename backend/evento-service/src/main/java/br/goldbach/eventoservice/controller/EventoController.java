@@ -4,6 +4,7 @@ import br.goldbach.eventoservice.dto.EventoDTO;
 import br.goldbach.eventoservice.model.Evento;
 import br.goldbach.eventoservice.service.EventoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +17,8 @@ public class EventoController {
     private final EventoService eventoService;
 
     @GetMapping
-    public ResponseEntity<List<EventoDTO>> buscarTodos() {
-        return eventoService.buscarTodos();
+    public ResponseEntity<List<EventoDTO>> buscarTodos(@RequestHeader(HttpHeaders.AUTHORIZATION) String token) {
+        return eventoService.buscarTodos(token);
     }
 
     @GetMapping("/{id}")
@@ -26,7 +27,7 @@ public class EventoController {
     }
 
     @PostMapping
-    public ResponseEntity<EventoDTO> inserir(@RequestBody EventoDTO evento) {
-        return eventoService.inserir(evento);
+    public ResponseEntity<EventoDTO> inserir(@RequestHeader(HttpHeaders.AUTHORIZATION) String token, @RequestBody EventoDTO evento) {
+        return eventoService.inserir(token, evento);
     }
 }

@@ -22,4 +22,5 @@ public class Cliente implements Serializable {
     private String cpf;
     private String telefone;
     private String email;
+    private UserType tipo;
 }

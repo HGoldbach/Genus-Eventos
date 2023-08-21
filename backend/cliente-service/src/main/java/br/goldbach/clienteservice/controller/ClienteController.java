@@ -4,6 +4,7 @@ import br.goldbach.clienteservice.dto.ClienteDTO;
 import br.goldbach.clienteservice.model.Cliente;
 import br.goldbach.clienteservice.repository.ClienteRepository;
 import br.goldbach.clienteservice.service.ClienteService;
+import jakarta.ws.rs.Path;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +34,11 @@ public class ClienteController {
     @GetMapping("/cpf/{cpf}")
     public ResponseEntity<ClienteDTO> buscarPorCpf(@PathVariable("cpf") String cpf) {
         return clienteService.buscarPorCpf(cpf);
+    }
+
+    @GetMapping("/email/{email}")
+    public ResponseEntity<ClienteDTO> buscarPorEmail(@PathVariable("email") String email) {
+        return clienteService.buscarPorEmail(email);
     }
 
     @PostMapping
