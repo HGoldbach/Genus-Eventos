@@ -2,20 +2,33 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListarComponent } from './listar';
 import { InserirEditarComponent } from './inserir-editar';
+import { AuthGuard } from 'src/app/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     title: 'Genus - Administração Profissionais',
-    component: ListarComponent
+    component: ListarComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: 'ADMIN'
+    }
   },
   {
     path: 'profissionais/novo',
-    component: InserirEditarComponent
+    component: InserirEditarComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: 'ADMIN'
+    }
   },
   {
     path: 'profissionais/editar/:id',
-    component: InserirEditarComponent
+    component: InserirEditarComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: 'ADMIN'
+    }
   }
 ];
 

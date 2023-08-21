@@ -4,3 +4,4 @@ export * from './profissional.model';
 export * from './especialidade.model';
 export * from './evento.model';
 export * from './conta.model';
+export * from './usuario.model';

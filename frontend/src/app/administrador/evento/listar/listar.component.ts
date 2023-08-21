@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente, Evento, Profissional } from 'src/app/shared';
 import { EventoService } from '../services';
+import { AuthService } from 'src/app/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar',
@@ -14,12 +16,9 @@ export class ListarComponent implements OnInit {
   ngOnInit(): void {
     this.eventos = [];
     this.buscarEventos();
-    setTimeout(() => {
-      console.log(this.eventos)
-    },1000);
   }
 
-  constructor(private eventoService: EventoService) { }
+  constructor(private eventoService: EventoService, private authService: AuthService, private router: Router) { }
 
   buscarEventos(): Evento[] {
     this.eventoService.buscarEventos().subscribe({
@@ -29,6 +28,10 @@ export class ListarComponent implements OnInit {
         } else {
           this.eventos = data;
         }
+      },
+      error: () => {
+        this.authService.logout();
+        this.router.navigate(['/']);
       }
     })
     return this.eventos;

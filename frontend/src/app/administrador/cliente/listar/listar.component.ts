@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/shared';
 import { ClienteService } from '../services';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth';
 
 @Component({
   selector: 'app-listar',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class ListarComponent implements OnInit{
   clientes: Cliente[] = [];
 
-  constructor(private clienteService: ClienteService, private router: Router){}
+  constructor(private clienteService: ClienteService, private authService: AuthService, private router: Router){}
 
   ngOnInit(): void {
     this.clientes = [];
@@ -26,6 +27,10 @@ export class ListarComponent implements OnInit{
         } else {
           this.clientes = data;
         }
+      },
+      error: () => {
+        this.authService.logout();
+        this.router.navigate(['/'])
       }
     });
 

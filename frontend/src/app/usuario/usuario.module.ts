@@ -4,6 +4,8 @@ import { UsuarioRoutingModule } from './usuario-routing.module';
 import { ClienteInicialComponent } from './cliente-inicial/cliente-inicial.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { UsuarioService } from './services';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,7 +16,11 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     UsuarioRoutingModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    UsuarioService
   ]
 })
 export class UsuarioModule { }

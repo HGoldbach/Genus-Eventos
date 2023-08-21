@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteInicialComponent } from './cliente-inicial';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: ClienteInicialComponent
+    component: ClienteInicialComponent,
+    canActivate: [AuthGuard],
+    data: {
+      role: 'CLIENTE'
+    }
   }
 ];
 

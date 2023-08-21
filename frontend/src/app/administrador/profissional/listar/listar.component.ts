@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Especialidade, Profissional } from 'src/app/shared';
 import { ProfissionalService } from '../services';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth';
 
 @Component({
   selector: 'app-listar',
@@ -12,7 +13,7 @@ export class ListarComponent implements OnInit {
   displayedColumns: string[] = ['nome', 'email', 'especialidade', 'acao'];
   profissionais: Profissional[] = [];
   
-  constructor(private profissionalService: ProfissionalService, private router: Router) { }
+  constructor(private profissionalService: ProfissionalService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.profissionais = [];
@@ -28,7 +29,12 @@ export class ListarComponent implements OnInit {
         } else {
           this.profissionais = data;
         }
+      },
+      error: () => {
+        this.authService.logout();
+        this.router.navigate(['/'])
       }
+
     });
 
     return this.profissionais;

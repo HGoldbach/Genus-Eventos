@@ -3,9 +3,15 @@
             <nav class="nav">
                 <ul class="nav__items">
                     <li class="nav__items--logo"><a routerLink="/" role="button">GENUS</a></li>
-                    <li class="nav__items--item"><a href="#" role="button">Solicitar Orçamento</a></li>
-                    <li class="nav__items--item"><a href="#" role="button">Trabalhe com a Genus</a></li>
-                    <li class="nav__items--item"><a routerLink="/conta" role="button">Entrar</a></li>
+                    <div *ngIf="tipoUsuario == 'ADMIN'">
+                        <li class="nav__items--item"><a href="#" role="button">Administração</a></li>    
+                    </div>
+                    <div *ngIf="tipoUsuario == 'CLIENTE' || !usuarioLogado" style="display: flex;">
+                        <li class="nav__items--item"><a href="#" role="button">Solicitar Orçamento</a></li>
+                        <li class="nav__items--item"><a href="#" role="button">Trabalhe com a Genus</a></li>
+                    </div>
+                    <li *ngIf="usuarioLogado" class="nav__items--item"><a (click)="logout()" role="button">Sair</a></li>
+                    <li *ngIf="!usuarioLogado" class="nav__items--item"><a routerLink="/conta" role="button">Entrar</a></li>
                 </ul>
                 <div class="nav__text">
                     <h1 class="nav__text--title">Genus Eventos</h1>

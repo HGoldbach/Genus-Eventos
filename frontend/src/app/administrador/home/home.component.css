@@ -28,6 +28,7 @@ a:active {
 }
 
 .nav__items {
+    width: 100%;
     display: flex;
     margin-top: 1.5rem;
 }

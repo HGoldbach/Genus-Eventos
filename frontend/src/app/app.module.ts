@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
-import { ContaModule } from './conta/conta.module';
+import { AuthModule } from './auth/auth.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +18,7 @@ import { UsuarioModule } from './usuario';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ContaModule,
+    AuthModule,
     AdministradorModule,
     UsuarioModule,
     SharedModule,

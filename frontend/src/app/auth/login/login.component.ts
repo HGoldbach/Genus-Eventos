@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Conta } from 'src/app/shared';
-import { ContaService } from '../services';
+import { AuthService } from '../services';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,18 +17,16 @@ export class LoginComponent implements OnInit{
     
   }
 
-  constructor(private contaService: ContaService, private router: Router){}
+  constructor(private authService: AuthService, private router: Router){}
 
-  login() : void {
-    this.contaService.login(this.conta).subscribe({
-      complete: () => {
-        console.log("SUCESSO!");
-        this.router.navigate(['/usuario'])
-      },
-      error: () => {
-        console.log("Erro ao logar");
-      }
-      
-    })
-  }
+  login(): void {
+  this.authService.login(this.conta).subscribe((usu) => {
+    if (usu != null) {
+      this.authService.usuarioLogado = usu;
+      this.router.navigate(['/']);
+    } else {
+      console.log("Usuario/Senha incorreta!");
+    }
+  });
+}
 }
