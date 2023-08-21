@@ -32,7 +32,7 @@ public class EspecialidadeService {
 
     public ResponseEntity<EspecialidadeDTO> inserir(Especialidade especialidade) {
         especialidadeRepository.save(especialidade);
-        return ResponseEntity.ok().body(modelMapper.map(especialidade, EspecialidadeDTO.class));
+        return ResponseEntity.status(201).body(modelMapper.map(especialidade, EspecialidadeDTO.class));
     }
 
     public ResponseEntity<EspecialidadeDTO> alterar(Long id, Especialidade especialidade) {

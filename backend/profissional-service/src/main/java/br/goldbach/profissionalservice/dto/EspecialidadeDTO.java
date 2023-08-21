@@ -1,14 +1,14 @@
 package br.goldbach.profissionalservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@EqualsAndHashCode
 public class EspecialidadeDTO implements Serializable {
     private Long id;
     private String descricao;
